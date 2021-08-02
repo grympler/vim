@@ -42,19 +42,8 @@ Plug 'tomasr/molokai'
 
 " Language specific
 "" Python
-Plug 'cjrh/vim-conda'
 Plug 'fs111/pydoc.vim'
 Plug 'hynek/vim-python-pep8-indent'
-"" Javascript
-Plug 'pangloss/vim-javascript'
-Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'jelera/vim-javascript-syntax'
-Plug 'burnettk/vim-angular'
-"" Haskell
-""" Autocomplete (plug in YCM)
-Plug 'eagletmt/neco-ghc'
-""" Type
-Plug 'eagletmt/ghcmod-vim'
 
 " Other Format
 "" Markdown

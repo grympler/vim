@@ -13,7 +13,7 @@ Feel free to change whatever you want !
 ```sh
 $ mv ~/.vim ~/vim_old
 
-$ git clone git@gitlab.com:gryg/vim.git .vim
+$ git clone git@github.com:grympler/vim.git .vim
 
 ```
 
@@ -108,9 +108,6 @@ vim-gitgutter [https://github.com/airblade/vim-gitgutter.git]
 
 vim-csv [https://github.com/chrisbra/csv.vim.git]
 
-vim-conda [https://github.com/cjrh/vim-conda/blob/master/plugin/vim-conda.vim]
-**Conda env in vim**
-
 neomake [https://github.com/neomake/neomake]
 **Asynchronous linting**
 
@@ -132,17 +129,11 @@ ag [https://github.com/rking/ag.vim]
 stylus[https://github.com/wavded/vim-stylus.git]
 **Syntax highlight html css**
 
-tern[https://github.com/marijnh/tern_for_vim.git]
-**Javascript smart autocompletion**
-
 ultisnips[SirVer/ultisnips]
 **snippet engine (require python)**
 
 vim-snippets[honza/vim-snippets]
 **snippets repo**
-
-python-mode[https://github.com/klen/python-mode.git]
-**indent, pep8 and more**
 
 # About the conf
 
