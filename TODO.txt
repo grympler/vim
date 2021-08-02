@@ -1,0 +1,15 @@
+TODO
+=========================================================================
+This configuration is not finished
+
+Still to improve :
+
+- Update some snipet un python/c/c++
+
+- Add good autocompletion for python
+
+- Refactor vimrc and sub config files
+
+- Add php support
+
+- Use easycolor to update color scheme and make taghighlight worthy
