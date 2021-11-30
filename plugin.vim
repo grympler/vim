@@ -35,7 +35,12 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>""
 
-" Syntastic
+" Neomake
+" Full config: when writing or reading a buffer, and on changes in insert and
+" " normal mode (after 500ms; no delay when writing).
+call neomake#configure#automake('nrwi', 500)
+
+" Syntastic (set neomake)
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
@@ -57,7 +62,6 @@ let g:syntastic_text_language_check_args = '--language=en-US'
 "" Python
 let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_python_pylint_args = '--rcfile=~/.pylintrc'
-"let g:syntastic_python_python_exec = '/usr/local/bin/python2.7'
 
 "" Javascript
 let g:syntastic_javascript_checkers = ['jshint']
