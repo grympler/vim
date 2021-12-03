@@ -30,6 +30,22 @@ map nt :NERDTree `pwd`<RETURN>
 nmap <silent> <unique> <SPACE>o :BufExplorer<CR>
 " Gundo
 nnoremap <F5> :GundoToggle<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" SEARCHING
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Fuzy fzf file search
+nnoremap <silent> <C-p> :FZF<CR>
+" Search in file with Ag
+nnoremap <silent> <Leader>p :Ag<CR>
+" Symbol search in workspace with YCM
+nmap <Leader>m <Plug>(YCMFindSymbolInWorkspace)
+" Symbol search in doc with YCM
+" Keep in case it become handy, but not needed as basic config
+" is ok
+"nmap <something> <Plug>(YCMFindSymbolInDocument)
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " EDITING
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

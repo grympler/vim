@@ -25,7 +25,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'neomake/neomake'
-Plug 'kien/ctrlp.vim'
+Plug 'junegunn/fzf'
 Plug 'mg979/vim-visual-multi',
 Plug 'rking/ag.vim'
 Plug 'wavded/vim-stylus'
