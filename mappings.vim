@@ -1,6 +1,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " /!\ LEADER KEY /!\
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap , <Nop>
 let mapleader = ","
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -28,23 +29,27 @@ map <C-left> <C-W>>
 map nt :NERDTree `pwd`<RETURN>
 " BufExplorer
 nmap <silent> <unique> <SPACE>o :BufExplorer<CR>
-" Gundo
-nnoremap <F5> :GundoToggle<CR>
-
+" Tagbar
+nnoremap :TG :TagbarToggle<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SEARCHING
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Fuzy fzf file search
-nnoremap <silent> <C-p> :FZF<CR>
-" Search in file with Ag
-nnoremap <silent> <Leader>p :Ag<CR>
+nnoremap <silent> <C-P> :FZF<CR>
+" Search what's highlighted in files with Ag
+nnoremap <silent> <Leader>* :Ag<CR>
 " Symbol search in workspace with YCM
-nmap <Leader>m <Plug>(YCMFindSymbolInWorkspace)
+nmap <Leader>p <Plug>(YCMFindSymbolInWorkspace)
 " Symbol search in doc with YCM
 " Keep in case it become handy, but not needed as basic config
 " is ok
 "nmap <something> <Plug>(YCMFindSymbolInDocument)
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Jumping, thx to gutentag; autogenrated ctags.
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <C-J> <C-]>
+nnoremap <C-K> <C-T>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " EDITING
@@ -63,14 +68,14 @@ imap jj <Esc>
 map ZO ggvGzO
 " disable highlighting : Useful after performing a search
 map ** <ESC>:noh<RETURN>
-" Folding functions
+" FIXME: Folding functions
 map -f <ESC>/^}<RETURN><ESC>zf%
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax checking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map<leader>f <ESC>:Errors<RETURN>
 map<leader>ff <ESC>:lclose<RETURN>
+map<leader>f <ESC>:lopen<RETURN>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " JSON

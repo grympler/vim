@@ -10,55 +10,64 @@ if has('vim_starting')
 
 endif
 
+" Disable lsp support for ALE (Let YCM be the default LSP tool)
+let g:ale_disable_lsp = 1
+
 call plug#begin('~/.vim/plugged')
 
-Plug 'Valloric/YouCompleteMe', {'do' : './install.sh'}
+" deoplete only used for .wiki files and markdown/prose now
+if has('nvim')
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
+" YCM as default autocompletion/LSP tool
+Plug 'ycm-core/YouCompleteMe', {'do' : './install.sh'}
 Plug 'vim-scripts/bufexplorer.zip'
 Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-scripts/The-NERD-tree', {'on': 'NERDTreeToggle'}
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
-Plug 'neomake/neomake'
+Plug 'dense-analysis/ale'
 Plug 'junegunn/fzf'
 Plug 'mg979/vim-visual-multi',
 Plug 'rking/ag.vim'
 Plug 'wavded/vim-stylus'
 Plug 'vim-scripts/LargeFile'
-Plug 'sjl/gundo.vim'
+Plug 'ludovicchabant/vim-gutentags'
 "" Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
 "" Themes
 Plug 'w0ng/vim-hybrid'
-Plug 'altercation/vim-colors-solarized'
-Plug 'tomasr/molokai'
+Plug 'joshdick/onedark.vim'
 
 " Language specific
 "" Python
-Plug 'fs111/pydoc.vim'
 Plug 'hynek/vim-python-pep8-indent'
+Plug 'tweekmonster/django-plus.vim'
 
 " Other Format
-"" Markdown
-Plug 'plasticboy/vim-markdown'
-"" CSV
-Plug 'chrisbra/csv.vim'
+"" global
+Plug 'sheerun/vim-polyglot'
 "" CSS
 Plug 'vim-scripts/Better-CSS-Syntax-for-Vim'
-"" HTML5
-Plug 'othree/html5.vim'
-Plug 'Rykka/riv.vim'
 "" Salt
 Plug 'mariodpros/salt-vim'
-"" ansible
-Plug 'pearofducks/ansible-vim'
+
+"" Custom wiki plugin
+Plug '~/.vim/plugged/vim-zettel-wiki'
 
 call plug#end()
 
@@ -71,6 +80,9 @@ filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GENERAL
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" set swap file directory
+set directory^=$HOME/.vim/swap//
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -80,8 +92,6 @@ else
     set backup		" keep a backup file
 endif
 
-set showcmd		" display incomplete commands
-set scrolloff=2
 set wildmode=longest,list
 set viminfo='1000,f1,:500,/500,<50,s10,h
 set listchars+=tab:I.,trail:_
@@ -111,16 +121,11 @@ set pumheight=15
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Font & Color
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set guifont=Monospace\ 10
+"set guifont=Monospace\ 10
+set guifont=DejaVu\ Sans:s12
 set background=dark
-"let g:solarized_termtrans=1
-"let g:solarized_termcolors=256
-"let g:solarized_contrast="high"
-"let g:solarized_visibility="high"
-"colorscheme solarized
 
-"colorscheme molokai
-colorscheme hybrid
+colorscheme onedark
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ENCODING & FILETYPE
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -143,8 +148,6 @@ set autoindent
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FORMATING
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"set textwidth=80
-highlight col79 ctermbg=Red guibg=Red
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SEARCHING
@@ -158,8 +161,6 @@ set incsearch		" do incremental searching
 " OTHER
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 source ~/.vim/filetype.vim
-source ~/.vim/langdep.vim
 source ~/.vim/plugin.vim
-" Disable for now, update soon
-"source ~/.vim/header.vim
 source ~/.vim/mappings.vim
+source ~/.vim/langdep.vim

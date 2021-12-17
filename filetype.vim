@@ -1,5 +1,4 @@
 " Global
-
 augroup filetypedetect
 	au BufNewFile,BufRead *.c                     	setf c
 	au BufNewFile,BufRead *.hcc				set filetype=cpp
@@ -28,10 +27,13 @@ augroup Binary
 	au BufWritePost *.o,*.out,*.obj,*.a,*.so,*.exe,*.bin set nomod | endif
 augroup END
 
+" Todo
 au BufNewFile,BufRead *todo,*TODO		set ft=wtodo
 
-" CSV plugin
+" StripWhiteSpace
+autocmd FileType * autocmd BufWritePre <buffer> StripWhitespace
 
+" CSV plugin
 if exists("did_load_csvfiletype")
 	finish
 endif
@@ -40,3 +42,6 @@ let did_load_csvfiletype=1
 augroup filetypedetect
 	au! BufRead,BufNewFile *.csv,*.datsetfiletype csv
 augroup END
+
+" Yaml settings
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
