@@ -2,6 +2,10 @@
 let g:ycm_filetype_specific_completion_to_disable = {
           \ 'zettel': 1
       \}
+autocmd FileType *
+            \ call deoplete#custom#buffer_option('auto_complete', v:false)
+autocmd FileType zettel
+            \ call deoplete#custom#buffer_option('auto_complete', v:true)
 
 " TagBar
 let g:tagbar_usearrows = 1
@@ -71,3 +75,6 @@ let g:ale_linters = {
 	\ 'javascript' : ['jshint'],
 	\ 'css'        : ['csslint']
     \}
+
+" Zettle custom plugin, handling non default option
+let g:zettel_sync_ssh_key_path = "/home/olivier/.ssh/id_ed25519"

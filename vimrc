@@ -39,9 +39,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'dense-analysis/ale'
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'mg979/vim-visual-multi',
-Plug 'rking/ag.vim'
 Plug 'wavded/vim-stylus'
 Plug 'vim-scripts/LargeFile'
 Plug 'ludovicchabant/vim-gutentags'
@@ -67,7 +67,7 @@ Plug 'vim-scripts/Better-CSS-Syntax-for-Vim'
 Plug 'mariodpros/salt-vim'
 
 "" Custom wiki plugin
-Plug '~/.vim/plugged/vim-zettel-wiki'
+Plug '~/.vim/plugged/vim-zettel'
 
 call plug#end()
 
@@ -148,6 +148,11 @@ set autoindent
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FORMATING
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Press F2 to toggle paste mode. Add visual feedback.
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SEARCHING

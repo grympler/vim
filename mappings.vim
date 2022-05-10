@@ -38,8 +38,12 @@ nnoremap :TG :TagbarToggle<CR>
 nnoremap <silent> <C-P> :FZF<CR>
 " Search what's highlighted in files with Ag
 nnoremap <silent> <Leader>* :Ag<CR>
+" Search what's highlighted with Ag
+nnoremap <silent> <C-*> :Ag yiwm<CR>
+" FullText search with AG
+nnoremap <silent> <C-F> :Ag<CR>
 " Symbol search in workspace with YCM
-nmap <Leader>p <Plug>(YCMFindSymbolInWorkspace)
+nnoremap <Leader>p <Plug>(YCMFindSymbolInWorkspace)
 " Symbol search in doc with YCM
 " Keep in case it become handy, but not needed as basic config
 " is ok
@@ -56,8 +60,6 @@ nnoremap <C-K> <C-T>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " reindent file
 map == ggvG=''
-" create one line of = symbols under the cursor
-map =line o=========================================================================<ESC>0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MISC
@@ -68,11 +70,11 @@ imap jj <Esc>
 map ZO ggvGzO
 " disable highlighting : Useful after performing a search
 map ** <ESC>:noh<RETURN>
-" FIXME: Folding functions
+" FIXME: Folding functions: can't get used to folding, maybe drop it
 map -f <ESC>/^}<RETURN><ESC>zf%
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Syntax checking
+" QuickList
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map<leader>ff <ESC>:lclose<RETURN>
 map<leader>f <ESC>:lopen<RETURN>
