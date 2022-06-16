@@ -28,7 +28,7 @@ map <C-left> <C-W>>
 " NERDTree
 map nt :NERDTree `pwd`<RETURN>
 " BufExplorer
-nmap <silent> <unique> <SPACE>o :BufExplorer<CR>
+nnoremap <SPACE>o :BufExplorer<CR>
 " Tagbar
 nnoremap :TG :TagbarToggle<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -38,6 +38,7 @@ nnoremap :TG :TagbarToggle<CR>
 nnoremap <silent> <C-P> :FZF<CR>
 " Search what's highlighted in files with Ag
 nnoremap <silent> <Leader>* :Ag<CR>
+
 " Search what's highlighted with Ag
 nnoremap <silent> <C-*> :Ag yiwm<CR>
 " FullText search with AG
@@ -66,12 +67,17 @@ map == ggvG=''
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Esc shortcut
 imap jj <Esc>
-" Unfold all file
-map ZO ggvGzO
 " disable highlighting : Useful after performing a search
 map ** <ESC>:noh<RETURN>
+" Unfold all file
+map ZO ggvGzO
 " FIXME: Folding functions: can't get used to folding, maybe drop it
 map -f <ESC>/^}<RETURN><ESC>zf%
+" Insert breakpoint
+nnoremap <C-B> o breakpoint()<CR><esc>
+" source vimrc
+nnoremap <F6> :source $MYVIMRC<CR>
+nnoremap <C-C> "+y
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " QuickList

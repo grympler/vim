@@ -45,3 +45,6 @@ augroup END
 
 " Yaml settings
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+" Highlight TODO, FIXME, NOTE, etc.
+autocmd Syntax * call matchadd('Todo', '\W\zs\(TODO\|FIXME\|CHANGED\|BUG\|HACK\|NOTE\|INFO\|IDEA\)')

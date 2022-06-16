@@ -101,6 +101,9 @@ set lz			" do not redraw while running macros (much faster) (LazyRedraw)
 set hid			" you can change buffer without saving
 set autoread		" update file without asking
 
+" If compile with clipboard, allow system copy pasta
+set clipboard=unnamedplus
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " APPEARANCE
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
