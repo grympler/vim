@@ -36,11 +36,16 @@ nnoremap :TG :TagbarToggle<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Fuzy fzf file search
 nnoremap <silent> <C-P> :FZF<CR>
+" Fuzy buffer, that's right let's go crazy
+command! -bang -nargs=? Buffers
+            \ call fzf#vim#buffers(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline','--tiebreak=end']}), <bang>0)
+nnoremap <silent> <C-O> :Buffers<RETURN>
 " Search what's highlighted in files with Ag
 nnoremap <silent> <Leader>* :Ag<CR>
 
 " Search what's highlighted with Ag
-nnoremap <silent> <C-*> :Ag yiwm<CR>
+" WIP
+nnoremap <silent> <C-H> :Ag <C-R><C-W><CR>
 " FullText search with AG
 nnoremap <silent> <C-F> :Ag<CR>
 " Symbol search in workspace with YCM
@@ -74,7 +79,9 @@ map ZO ggvGzO
 " FIXME: Folding functions: can't get used to folding, maybe drop it
 map -f <ESC>/^}<RETURN><ESC>zf%
 " Insert breakpoint
-nnoremap <C-B> o breakpoint()<CR><esc>
+command InsBreakpoint :normal o breakpoint()<CR><ESC>
+nnoremap <C-B> :InsBreakpoint<ESC>
+
 " source vimrc
 nnoremap <F6> :source $MYVIMRC<CR>
 nnoremap <C-C> "+y
