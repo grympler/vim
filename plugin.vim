@@ -116,8 +116,14 @@ let g:ale_linters = {
 	\ 'javascript' : ['jshint'],
 	\ 'css'        : ['csslint']
     \}
+let g:ale_fixers = {
+    \ 'python'     : ['autopep8', 'yapf']
+    \}
 let g:ale_linters_explicit = 1
 let g:ale_set_quickfix = 1
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 " Zettle custom plugin, handling non default option
 let g:zettel_sync_ssh_key_path = "/home/olivier/.ssh/id_ed25519"

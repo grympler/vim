@@ -38,13 +38,15 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
+Plug 'wavded/vim-stylus'
+Plug 'vim-scripts/LargeFile'
 Plug 'dense-analysis/ale'
+" Move move move move move
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mg979/vim-visual-multi',
-Plug 'wavded/vim-stylus'
-Plug 'vim-scripts/LargeFile'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'easymotion/vim-easymotion'
 "" Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -54,10 +56,12 @@ Plug 'w0ng/vim-hybrid'
 Plug 'joshdick/onedark.vim'
 
 " Language specific
+" " Move move move move move
 "" Python
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'tweekmonster/django-plus.vim'
-
+"" JsonL
+Plug 'axiaoxin/vim-json-line-format'
 " Other Format
 "" global
 Plug 'sheerun/vim-polyglot'
