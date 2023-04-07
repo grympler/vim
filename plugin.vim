@@ -107,12 +107,11 @@ let g:airline_symbols.dirty='⚡'
 let g:airline_symbols.space = "\ua0"
 
 " Ale
-let g:ale_alias = {'zettel': ['markdown']}
 let g:ale_linters = {
 	\ 'c'          : ['clang'],
 	\ 'markdown'   : ['cspell', 'languagetool', 'proselint', 'redpen', 'remark_lint', 'textlint', 'vale', 'writegood'],
 	\ 'vim'        : ['vint'],
-	\ 'python'     : ['pylint', 'vulture', 'mypy'],
+	\ 'python'     : ['flake8'],
 	\ 'javascript' : ['jshint'],
 	\ 'css'        : ['csslint']
     \}
@@ -124,15 +123,3 @@ let g:ale_set_quickfix = 1
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-
-" Zettle custom plugin, handling non default option
-let g:zettel_sync_ssh_key_path = "/home/olivier/.ssh/id_ed25519"
-"" Wiki trick
-let g:ycm_filetype_specific_completion_to_disable = {
-          \ 'zettel': 1
-      \}
-autocmd FileType *
-            \ call deoplete#custom#buffer_option('auto_complete', v:false)
-autocmd FileType zettel
-            \ call deoplete#custom#buffer_option('auto_complete', v:true)
-

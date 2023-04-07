@@ -71,7 +71,7 @@ Plug 'vim-scripts/Better-CSS-Syntax-for-Vim'
 Plug 'mariodpros/salt-vim'
 
 "" Custom wiki plugin
-Plug '~/.vim/plugged/vim-zettel'
+"Plug '~/.vim/plugged/vim-zettel'
 
 call plug#end()
 
