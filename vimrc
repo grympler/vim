@@ -15,15 +15,6 @@ let g:ale_disable_lsp = 1
 
 call plug#begin('~/.vim/plugged')
 
-" deoplete only used for .wiki files and markdown/prose now
-if has('nvim')
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-    Plug 'Shougo/deoplete.nvim'
-    Plug 'roxma/nvim-yarp'
-    Plug 'roxma/vim-hug-neovim-rpc'
-endif
-
 " YCM as default autocompletion/LSP tool
 Plug 'ycm-core/YouCompleteMe', {'do' : './install.sh'}
 Plug 'vim-scripts/bufexplorer.zip'
@@ -45,7 +36,6 @@ Plug 'dense-analysis/ale'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mg979/vim-visual-multi',
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'easymotion/vim-easymotion'
 "" Snippets
 Plug 'SirVer/ultisnips'
@@ -60,6 +50,8 @@ Plug 'joshdick/onedark.vim'
 "" Python
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'tweekmonster/django-plus.vim'
+Plug 'plytophogy/vim-virtualenv'
+Plug 'PieterjanMontens/vim-pipenv'
 "" JsonL
 Plug 'axiaoxin/vim-json-line-format'
 " Other Format

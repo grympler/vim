@@ -31,6 +31,14 @@ map nt :NERDTree `pwd`<RETURN>
 nnoremap <SPACE>o :BufExplorer<CR>
 " Tagbar
 nnoremap :TG :TagbarToggle<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Jumping, thx to gutentag; autogenrated ctags.
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <C-J> :YcmCompleter GoToDefinition <CR>
+nnoremap <C-K> <C-O>
+"" We can go forward again after hitting <C-K> with <C-I>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SEARCHING
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -40,26 +48,10 @@ nnoremap <silent> <C-P> :FZF<CR>
 command! -bang -nargs=? Buffers
             \ call fzf#vim#buffers(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline','--tiebreak=end']}), <bang>0)
 nnoremap <silent> <C-O> :Buffers<RETURN>
-" Search what's highlighted in files with Ag
-nnoremap <silent> <Leader>* :Ag<CR>
-
-" Search what's highlighted with Ag
-" WIP
+" Search what's highlighted with Ag: <C-H>
 nnoremap <silent> <C-H> :Ag <C-R><C-W><CR>
 " FullText search with AG
 nnoremap <silent> <C-F> :Ag<CR>
-" Symbol search in workspace with YCM
-nnoremap <Leader>p <Plug>(YCMFindSymbolInWorkspace)
-" Symbol search in doc with YCM
-" Keep in case it become handy, but not needed as basic config
-" is ok
-"nmap <something> <Plug>(YCMFindSymbolInDocument)
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Jumping, thx to gutentag; autogenrated ctags.
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <C-J> <C-]>
-nnoremap <C-K> <C-T>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " EDITING
