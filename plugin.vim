@@ -2,36 +2,6 @@
 let g:tagbar_usearrows = 1
 let g:tagbar_autofocus = 0
 
-" Ycm work with conda and misc venv
-let g:ycm_path_to_python_interpreter = '/usr/bin/python'
-
-" Gutentag
-let g:gutentags_cache_dir = "~/Projects/.tags/"
-let g:gutentags_exclude_filetypes = ['gitcommit', 'gitconfig', 'gitrebase', 'gitsendemail', 'git', 'yaml']
-let g:gutentags_ctags_exclude = [
-\  '*.git', '*.svn', '*.hg',
-\  'cache', 'build', 'dist', 'bin', 'node_modules', 'bower_components',
-\  '*-lock.json',  '*.lock',
-\  '*.min.*',
-\  '*.bak',
-\  '*.zip',
-\  '*.pyc',
-\  '*.class',
-\  '*.sln',
-\  '*.csproj', '*.csproj.user',
-\  '*.tmp',
-\  '*.cache',
-\  '*.vscode',
-\  '*.pdb',
-\  '*.exe', '*.dll', '*.bin',
-\  '*.mp3', '*.ogg', '*.flac',
-\  '*.swp', '*.swo',
-\  '.DS_Store', '*.plist',
-\  '*.bmp', '*.gif', '*.ico', '*.jpg', '*.png', '*.svg',
-\  '*.rar', '*.zip', '*.tar', '*.tar.gz', '*.tar.xz', '*.tar.bz2',
-\  '*.pdf', '*.doc', '*.docx', '*.ppt', '*.pptx', '*.xls',
-\]
-
 " Let's make ultisnipe and ycm work together:
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
