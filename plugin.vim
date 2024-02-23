@@ -81,15 +81,18 @@ let g:ale_linters = {
 	\ 'c'          : ['clang'],
 	\ 'markdown'   : ['cspell', 'languagetool', 'proselint', 'redpen', 'remark_lint', 'textlint', 'vale', 'writegood'],
 	\ 'vim'        : ['vint'],
-	\ 'python'     : ['flake8'],
+	\ 'python'     : ['ruff', 'flake8'],
 	\ 'javascript' : ['jshint'],
 	\ 'css'        : ['csslint']
     \}
 let g:ale_fixers = {
-    \ 'python'     : ['autopep8', 'yapf']
+    \ 'python'     : ['ruff', 'isort', 'black']
     \}
 let g:ale_linters_explicit = 1
-let g:ale_set_quickfix = 1
+let g:ale_python_auto_pipenv = 1
+let g:ale_python_black_options='--line-length=140'
+let g:ale_python_isort_options = '--profile black -l 140 --overwrite-in-place'
+"let g:ale_set_quickfix = 1
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'

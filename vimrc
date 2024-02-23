@@ -48,10 +48,7 @@ Plug 'joshdick/onedark.vim'
 " Language specific
 " " Move move move move move
 "" Python
-Plug 'hynek/vim-python-pep8-indent'
 Plug 'tweekmonster/django-plus.vim'
-Plug 'plytophogy/vim-virtualenv'
-Plug 'PieterjanMontens/vim-pipenv'
 "" JsonL
 Plug 'axiaoxin/vim-json-line-format'
 " Other Format
