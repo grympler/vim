@@ -78,7 +78,7 @@ filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " set swap file directory
-set directory^=$HOME/.vim/swap/
+set directory^=$HOME/.vim/.swap/
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
