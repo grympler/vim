@@ -16,11 +16,12 @@ let g:ale_disable_lsp = 1
 call plug#begin('~/.vim/plugged')
 
 " YCM as default autocompletion/LSP tool
-Plug 'ycm-core/YouCompleteMe', {'do' : './install.sh'}
+Plug 'ycm-core/YouCompleteMe', {'do' : './install.py --all'}
 Plug 'vim-scripts/bufexplorer.zip'
 Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdcommenter'
-Plug 'vim-scripts/The-NERD-tree', {'on': 'NERDTreeToggle'}
+Plug 'preservim/nerdtree'
+Plug 'unkiwii/vim-nerdtree-sync'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -49,6 +50,8 @@ Plug 'joshdick/onedark.vim'
 " " Move move move move move
 "" Python
 Plug 'tweekmonster/django-plus.vim'
+"" Flutter/Dart
+Plug 'dart-lang/dart-vim-plugin'
 "" JsonL
 Plug 'axiaoxin/vim-json-line-format'
 " Other Format
@@ -75,7 +78,7 @@ filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " set swap file directory
-set directory^=$HOME/.vim/swap//
+set directory^=$HOME/.vim/swap/
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -120,6 +123,7 @@ set pumheight=15
 "set guifont=Monospace\ 10
 set guifont=DejaVu\ Sans:s12
 set background=dark
+set mouse=a
 
 colorscheme onedark
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -165,3 +169,4 @@ source ~/.vim/filetype.vim
 source ~/.vim/plugin.vim
 source ~/.vim/mappings.vim
 source ~/.vim/langdep.vim
+source ~/.vim/.lsp/vimrc.generated

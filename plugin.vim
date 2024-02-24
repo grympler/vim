@@ -96,3 +96,5 @@ let g:ale_python_isort_options = '--profile black -l 140 --overwrite-in-place'
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+let g:nerdtree_sync_cursorline = 1
